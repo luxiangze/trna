@@ -1,0 +1,7 @@
+# 忽略临时文件
+*.log
+*.tmp
+*.bak
+__pycache__/
+.ipynb_checkpoints/
+results/
