@@ -5,3 +5,12 @@
 __pycache__/
 .ipynb_checkpoints/
 results/
+data/
+.history/
+work/
+sifs/
+logs/
+
+# pixi environments
+.pixi
+*.egg-info
