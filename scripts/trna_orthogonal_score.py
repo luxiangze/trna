@@ -3,6 +3,7 @@ from Bio import Align
 import argparse
 import pandas as pd
 import numpy as np
+import os
 
 @dataclass
 class tRNARecord:
@@ -141,6 +142,9 @@ def main():
     target_stk_file = args.target
     identity_elements_file = args.identity_elements
     output_dir = args.output
+
+    # 确保输出目录存在
+    os.makedirs(output_dir, exist_ok=True)
 
     # 读取identity_elements.txt文件
     identity_elements = phase_identity_elements(identity_elements_file)

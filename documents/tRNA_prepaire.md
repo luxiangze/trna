@@ -86,6 +86,16 @@ create_tDRnamer_db --db sfr --genome /home/gyk/reference/sf_ncbi/GCF_023101765.2
 python scripts/trna_orthogonal_score.py \
 -q work/tRNAscan-SE/sfr-tDRnamer_db/sfr-trnaalign.stk \
 -t work/tRNAscan-SE/bmo-tDRnamer_db/bmo-trnaalign.stk \
--o results \
+-o results/Sf_in_Bm \
+-e data/identity_elements.txt
+```
+
+以家蚕为查询物种，草地贪夜蛾为参考物种，找到能在家蚕中被识别而在草地贪夜蛾中未被识别的tRNA。即tRNA所属氨基酸类型的正交得分小于0的tRNA。
+
+```bash
+python scripts/trna_orthogonal_score.py \
+-q work/tRNAscan-SE/bmo-tDRnamer_db/bmo-trnaalign.stk \
+-t work/tRNAscan-SE/sfr-tDRnamer_db/sfr-trnaalign.stk \
+-o results/Bm_in_Sf \
 -e data/identity_elements.txt
 ```

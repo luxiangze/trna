@@ -14,3 +14,4 @@ logs/
 # pixi environments
 .pixi
 *.egg-info
+.vscode

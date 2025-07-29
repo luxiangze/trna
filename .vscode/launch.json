@@ -4,6 +4,27 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {"name":"Python Debugger: Current File with Arguments","type":"debugpy","request":"launch","program":"${file}","console":"integratedTerminal","args":"${command:pickArgs}"},
+
+        {"name":"Python Debugger: fasta_file_prepare.py",
+        "type":"debugpy",
+        "request":"launch",
+        "program":"${file}",
+        "console":"integratedTerminal",
+        "args":"--tRNA_ids results/Sf_in_Bm/candidate_tRNAs.csv --tRNA_ids_map work/tRNAscan-SE/sfr-tRNAs-name_map.txt --tRNA_structure work/tRNAscan-SE/sfr-tRNAs-confidence.ss --aaRSs_fasta work/colabfold/Bm_aaRSs.fasta --output_dir work/rosetta/Sf_in_Bm"},
+        {"name": "Python Debugger: collect_scores.py",
+        "type": "debugpy",
+        "request": "launch",
+        "program":"${file}",
+        "console":"integratedTerminal",
+        "args":"--input_dir work/rosetta/Bm_in_Bm/results --out_file work/rosetta/Bm_in_Bm/results/scores.csv"
+        },
+        {"name": "Python Debugger: design_mutant_library.py",
+        "type": "debugpy",
+        "request": "launch",
+        "program":"${file}",
+        "console":"integratedTerminal",
+        "args":"--input_IDs_file results/Sf_in_Bm/candidate_tRNAs_id.txt --input_ID_map work/tRNAscan-SE/sfr-tRNAs-name_map.txt --input_structure work/tRNAscan-SE/sfr-tRNAs-confidence.ss --out_file results/Sf_in_Bm/candidate_tRNAs_mutant_library.fasta"
+        }
+
     ]
 }
